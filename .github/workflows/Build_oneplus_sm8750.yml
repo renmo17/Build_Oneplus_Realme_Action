@@ -405,6 +405,7 @@ jobs:
           fi
 
       - name: 🔧 Apply Sched Patch (应用完美风驰补丁)
+        if: ${{ env.ENABLE_SCX == 'true' }}
         run: |
           if [ "$SCHED_FILE" = "none" ]; then
             echo "该机型自带风驰，跳过所有补丁应用"
